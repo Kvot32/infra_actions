@@ -67,7 +67,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull kvot32/workflow
+            sudo docker pull kvot32/workflow:v1
             #остановка всех контейнеров
             sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 kvot32/workflow
+            sudo docker run --rm -d -p 5000:5000 kvot32/workflow:v1
